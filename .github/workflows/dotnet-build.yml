@@ -1,0 +1,17 @@
+name: Testando workflow
+
+on:
+  push:
+  schedule:
+    - cron: '0 * * * *' #executado a cada hora
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checking repository
+        uses: actions/checkout@v2
+      
+      - name: Script
+        run: echo "Workflow funcionando"
